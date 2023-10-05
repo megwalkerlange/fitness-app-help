@@ -1,3 +1,4 @@
+import React from 'react';
 import FitnessForm from '../../form';
 import './home.css'; // Import your CSS file
 

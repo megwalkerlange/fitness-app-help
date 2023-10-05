@@ -1,3 +1,4 @@
+import React from 'react';
 import PastWorkoutContainer from '../../pastWorkoutContainer';
 
 function pastWorkouts() {

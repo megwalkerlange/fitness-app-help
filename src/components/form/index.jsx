@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import './form.css';
 
 function FitnessForm() {
@@ -10,9 +11,7 @@ function FitnessForm() {
   const [medicalConditions, setMedicalConditions] = useState('');
   const [newsletterSubscription, setNewsletterSubscription] = useState(false);
 
-
-  const handleSubmit = (e) => {
-
+  const handleSubmit = e => {
     e.preventDefault();
   };
 
@@ -23,15 +22,24 @@ function FitnessForm() {
         <div className="form-group">
           <label htmlFor="age">Age:</label>
 
-          <input type="number" id="age" value={age} onChange={(e) => setAge(e.target.value)} required />
-
+          <input
+            type="number"
+            id="age"
+            value={age}
+            onChange={e => setAge(e.target.value)}
+            required
+          />
         </div>
 
         <div className="form-group">
           <label htmlFor="sex">Sex:</label>
 
-          <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)} required>
-
+          <select
+            id="sex"
+            value={sex}
+            onChange={e => setSex(e.target.value)}
+            required
+          >
             <option value="">Select</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -82,9 +90,11 @@ function FitnessForm() {
               type="checkbox"
               value="weightLoss"
               checked={fitnessGoals.includes('weightLoss')}
-
-              onChange={(e) => setFitnessGoals((goals) => updateCheckboxArray(goals, 'weightLoss', e.target.checked))}
-
+              onChange={e =>
+                setFitnessGoals(goals =>
+                  updateCheckboxArray(goals, 'weightLoss', e.target.checked),
+                )
+              }
             />
             Weight Loss
           </label>
@@ -93,9 +103,11 @@ function FitnessForm() {
               type="checkbox"
               value="muscleGain"
               checked={fitnessGoals.includes('muscleGain')}
-
-              onChange={(e) => setFitnessGoals((goals) => updateCheckboxArray(goals, 'muscleGain', e.target.checked))}
-
+              onChange={e =>
+                setFitnessGoals(goals =>
+                  updateCheckboxArray(goals, 'muscleGain', e.target.checked),
+                )
+              }
             />
             Muscle Gain
           </label>
@@ -108,9 +120,15 @@ function FitnessForm() {
               type="checkbox"
               value="vegetarian"
               checked={dietaryRestrictions.includes('vegetarian')}
-
-              onChange={(e) => setDietaryRestrictions((restrictions) => updateCheckboxArray(restrictions, 'vegetarian', e.target.checked))}
-
+              onChange={e =>
+                setDietaryRestrictions(restrictions =>
+                  updateCheckboxArray(
+                    restrictions,
+                    'vegetarian',
+                    e.target.checked,
+                  ),
+                )
+              }
             />
             Vegetarian
           </label>
@@ -119,9 +137,11 @@ function FitnessForm() {
               type="checkbox"
               value="vegan"
               checked={dietaryRestrictions.includes('vegan')}
-
-              onChange={(e) => setDietaryRestrictions((restrictions) => updateCheckboxArray(restrictions, 'vegan', e.target.checked))}
-
+              onChange={e =>
+                setDietaryRestrictions(restrictions =>
+                  updateCheckboxArray(restrictions, 'vegan', e.target.checked),
+                )
+              }
             />
             Vegan
           </label>
@@ -132,9 +152,7 @@ function FitnessForm() {
           <textarea
             id="medicalConditions"
             value={medicalConditions}
-
-            onChange={(e) => setMedicalConditions(e.target.value)}
-
+            onChange={e => setMedicalConditions(e.target.value)}
           />
         </div>
 
@@ -143,8 +161,9 @@ function FitnessForm() {
             <input
               type="checkbox"
               checked={newsletterSubscription}
-
-              onChange={() => setNewsletterSubscription(!newsletterSubscription)}
+              onChange={() =>
+                setNewsletterSubscription(!newsletterSubscription)
+              }
             />
             Subscribe to Newsletter
           </label>
@@ -160,8 +179,7 @@ function updateCheckboxArray(arr, value, isChecked) {
   if (isChecked) {
     return [...arr, value];
   } else {
-
-    return arr.filter((item) => item !== value);
+    return arr.filter(item => item !== value);
   }
 }
 

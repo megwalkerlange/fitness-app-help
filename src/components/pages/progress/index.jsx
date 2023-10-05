@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import React from 'react';
 import Progress from '../progress/index';
@@ -9,7 +10,7 @@ const Progress = () => {
     datasets: [
       {
         label: 'Workout Progress',
-        data: [30, 45, 60, 75, 90], 
+        data: [30, 45, 60, 75, 90],
         borderColor: 'rgba(75, 192, 192, 1)',
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderWidth: 2,
@@ -27,7 +28,7 @@ const Progress = () => {
             scales: {
               y: {
                 beginAtZero: true,
-                max: 100, 
+                max: 100,
               },
             },
           }}

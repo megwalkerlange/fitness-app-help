@@ -1,4 +1,5 @@
 // import FitnessChart from '../../../FitnessChart';
+import React from 'react';
 
 function futureWorkouts() {
   return (

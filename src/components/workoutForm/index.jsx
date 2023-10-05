@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import API from '../../utils/API';
 import '../workoutForm/workoutForm.css';
 
@@ -25,7 +26,7 @@ function DropDownForm() {
   const [selectedMuscle, setSelectedMuscle] = useState('Please Select');
   const [searchResults, setSearchResults] = useState([]);
 
-  const saveToLS = (workout) => {
+  const saveToLS = workout => {
     // Try to get the data from localStorage. If there's no data, store an empty array in the variable.
     let savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts')) || [];
 
@@ -48,19 +49,16 @@ function DropDownForm() {
     getData();
   }, [selectedMuscle]);
 
-  const handleSelectChange = (e) => {
+  const handleSelectChange = e => {
     setSelectedMuscle(e.target.value);
   };
 
   return (
     <>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={e => e.preventDefault()}>
         <p>Please select what muscle group you would like to target</p>
-        <select
-          value={selectedMuscle}
-          onChange={handleSelectChange}
-        >
-          {muscleOptions.map((value) => (
+        <select value={selectedMuscle} onChange={handleSelectChange}>
+          {muscleOptions.map(value => (
             <option value={value} key={value}>
               {value}
             </option>
