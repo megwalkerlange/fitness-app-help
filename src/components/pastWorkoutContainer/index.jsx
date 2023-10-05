@@ -7,7 +7,7 @@ import '../pastWorkoutContainer/pastcontain.css';
 // // const name = tryy.split('');
 
 function PastWorkoutContainer() {
-  const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
+  const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts')) || [];
 
   return (
     <div>
