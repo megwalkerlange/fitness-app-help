@@ -1,9 +1,9 @@
 import '../pastWorkoutContainer/pastcontain.css';
 
-const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
-const tryy = JSON.stringify(savedWorkouts[1]) || [];
-console.log(tryy);
-//  const name = tryy.split('');
+// const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
+// // // const tryy = JSON.stringify(savedWorkouts[1]) || [];
+// // console.log(tryy);
+// // //  const name = tryy.split('');
 
 function PastWorkoutContainer() {
   const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
